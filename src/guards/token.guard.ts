@@ -24,7 +24,6 @@ export class TokenGuard implements CanActivate {
       throw new UnauthorizedException('Token inválido o sin peticiones restantes');
     }
 
-    // Reducir las peticiones restantes del token
     await this.tokenService.reduce(tokenId);
 
     return true;
