@@ -73,12 +73,12 @@ export class CharacterService {
       );
     }
 
-    // Si no tiene propiedad, retornar 0
+    // Si no tiene propiedad
     if (!character.property) {
       return { taxDebt: 0 };
     }
 
-    // Calcular impuestos según la fórmula
+    // Calcular impuestos
     const coef = character.employee ? 0.08 : 0.03;
     const taxDebt = Number(character.property.cost) * (1 + coef);
 
